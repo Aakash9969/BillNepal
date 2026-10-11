@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+/* ── Self-hosted fonts (offline-first — no Google Fonts dependency) ───── */
+/* Sora — UI/display (latin) · Noto Sans Devanagari — Devanagari fallback */
+/* JetBrains Mono — numerals/refs · All OFL-licensed, bundled in /public/fonts */
+
+/* latin-ext */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('/fonts/Sora-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('/fonts/Sora-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/NotoSansDevanagari-devanagari.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/NotoSansDevanagari-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/NotoSansDevanagari-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+  /* ── Surfaces: Kathmandu Midnight ink scale ─────────────── */
+  --color-ink-950: #06080d;
+  --color-ink-900: #0a0d14;
+  --color-ink-850: #10141d;
+  --color-ink-800: #141a26;
+  --color-ink-750: #1a2130;
+  --color-ink-700: #212940;
+  --color-ink-600: #2a3450;
+  --color-ink-500: #364265;
+
+  --color-line: #1e2534;
+  --color-line-strong: #2b3552;
+
+  /* ── Text: fog scale ────────────────────────────────────── */
+  --color-fog-100: #f1f4fb;
+  --color-fog-200: #c9d2e5;
+  --color-fog-300: #9ba7c0;
+  --color-fog-400: #6e7a94;
+  --color-fog-500: #525e78;
+
+  /* ── Primary: Nepal crimson ────────────────────────────── */
+  --color-crimson-300: #f98aa0;
+  --color-crimson-400: #f25a72;
+  --color-crimson-500: #e8354e;
+  --color-crimson-600: #c9183a;
+  --color-crimson-700: #a30f2d;
+
+  /* ── Accent: ledger gold ───────────────────────────────── */
+  --color-gold-300: #f2ce7a;
+  --color-gold-400: #e3b341;
+  --color-gold-500: #c9972b;
+
+  /* ── Semantics ─────────────────────────────────────────── */
+  --color-mint-300: #6fe3a0;
+  --color-mint-400: #2fbe6e;
+  --color-mint-500: #1fa75a;
+  --color-amber-400: #f5a623;
+  --color-amber-500: #d98a0f;
+  --color-sky-400: #54a9ff;
+  --color-sky-500: #2f8be6;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #7c5ce0;
+
+  /* ── Nepali payment brands ─────────────────────────────── */
+  --color-esewa: #60bb46;
+  --color-khalti: #6c3fc0;
+  --color-fonepay: #f58220;
+
+  /* ── Type ──────────────────────────────────────────────── */
+  --font-sans: "Sora", "Noto Sans Devanagari", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans Devanagari", ui-monospace, "Cascadia Mono", monospace;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-fog-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+::selection {
+  background: rgba(232, 53, 78, 0.35);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-crimson-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbars ──────────────────────────────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-600) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-ink-600);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-500);
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Helpers ─────────────────────────────────────────────── */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.bg-crimson-grad {
+  background-image: linear-gradient(135deg, #f04b62 0%, #c81f3c 100%);
+}
+
+.bg-gold-grad {
+  background-image: linear-gradient(135deg, #f0c75e 0%, #c9972b 100%);
+}
+
+/* Layered Himalayan ambience for hero/login surfaces */
+.bg-himalaya {
+  background-image:
+    radial-gradient(52rem 30rem at 82% -12%, rgba(232, 53, 78, 0.14), transparent 62%),
+    radial-gradient(44rem 30rem at -8% 108%, rgba(227, 179, 65, 0.09), transparent 60%),
+    radial-gradient(36rem 26rem at 8% -6%, rgba(47, 139, 230, 0.08), transparent 58%),
+    linear-gradient(180deg, #0a0d14 0%, #06080d 100%);
+}
+
+/* Subtle paper texture for the VAT invoice sheet (kept light on purpose) */
+.paper {
+  background:
+    repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.015) 0 1px, transparent 1px 4px),
+    #fdfdfb;
+  color: #10131c;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Status dot pulse */
+@keyframes dot-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+.dot-pulse {
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+/* ── Print: only the invoice sheet leaves the browser ────── */
+.print-portal {
+  display: none;
+}
+@media print {
+  body {
+    overflow: visible;
+  }
+  body > #root {
+    display: none !important;
+  }
+  .print-portal {
+    display: block !important;
+  }
+  @page {
+    margin: 8mm;
+  }
+}
+
+/* ── Reduced motion: soften ambient CSS too ───────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .dot-pulse,
+  .float-soft {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
